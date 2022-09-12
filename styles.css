@@ -1,6 +1,11 @@
 * {
   box-sizing: border-box;
 }
+/* 
+@font-face {
+  font-family: ;
+  src: url();
+} */
 
 body {
   display: flex;
@@ -43,13 +48,17 @@ body,
   position: absolute;
   left: -1000px;
   background-color: transparent;
+  width: 1%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  resize: none;
   /* border: 2px solid #a1922e;
   outline: none;
   height: 9rem;
   width: 100%;
-  margin: auto; */
-  resize: none;
-  /* padding: 0.5rem 1rem;
+  margin: auto;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 0.5rem;
   color: white; */
@@ -70,6 +79,10 @@ body:last-child {
 .wrong {
   color: lightcoral;
   text-decoration: underline;
+}
+
+.highlight {
+  background-color: darkgoldenrod;
 }
 
 .unselectable {
