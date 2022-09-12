@@ -1,11 +1,27 @@
 * {
   box-sizing: border-box;
 }
-/* 
+
 @font-face {
-  font-family: ;
-  src: url();
-} */
+  font-family: iosevka;
+  src: url(iosevka-fixed-regular.ttf);
+}
+
+/* nav */
+.three-line {
+  display: block;
+  line-height: 0.5em;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  position: absolute;
+  top: 0;
+  right: 2%;
+}
+
+/* body */
 
 body {
   display: flex;
@@ -39,9 +55,21 @@ body,
   font-weight: bold;
 }
 
+.stats {
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+}
+
+.stats-inner {
+  display: inline-block;
+  padding: 0 5%;
+}
+
 .quote-display {
   color: white;
   font-size: 1.2rem;
+  font-family: iosevka;
 }
 
 .quote-input {
@@ -83,6 +111,7 @@ body:last-child {
 
 .highlight {
   background-color: darkgoldenrod;
+  /* box-shadow: 0 0 1px 1px slateblue; */
 }
 
 .unselectable {

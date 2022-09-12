@@ -12,6 +12,7 @@ quoteInput.addEventListener("input", (e) => {
   quotearray.forEach((quotechar, index) => {
     const inputchar = inputarray[index];
     if (inputchar == null) {
+      //quotechar.classList.remove("highlight");
       quotechar.classList.remove("correct");
       quotechar.classList.remove("wrong");
     } else if (inputchar === quotechar.innerText) {
@@ -24,7 +25,6 @@ quoteInput.addEventListener("input", (e) => {
       quotechar.classList.add("wrong");
     }
   });
-
   if (quoteInput.value.length == quotearray.length) {
     window.location.reload();
   }
