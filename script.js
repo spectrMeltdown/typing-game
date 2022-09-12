@@ -1,7 +1,7 @@
 const QUOTELISTURL = "https://type.fit/api/quotes";
 let random = Math.floor(Math.random() * 1000);
 
-quoteInput.addEventListener("input", () => {
+quoteInput.addEventListener("input", (e) => {
   const quotearray = quoteDisplay.querySelectorAll("span");
   const inputarray = quoteInput.value.split("");
   quotearray.forEach((quotechar, index) => {
@@ -15,6 +15,12 @@ quoteInput.addEventListener("input", () => {
     } else {
       quotechar.classList.remove("correct");
       quotechar.classList.add("wrong");
+    }
+    if (
+      quotearray[quotearray.length - 1].textContent === "." &&
+      e.data === null
+    ) {
+      window.location.reload();
     }
   });
 });
