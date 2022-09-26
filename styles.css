@@ -8,17 +8,85 @@
 }
 
 /* nav */
-.three-line {
-  display: block;
-  line-height: 0.5em;
-  font-size: 1.5rem;
-  cursor: pointer;
+nav {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.title {
+  display: inline-block;
+  padding-left: 2%;
 }
 
 .hamburger {
   position: absolute;
+  top: 3%;
+  right: 1%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.ham-lines-container {
+  padding: 1rem;
+}
+
+.hamburger-lines {
+  width: 20px;
+  height: 8px;
+  border-bottom: 2px solid white;
+  background-color: transparent;
+  animation: reversechangeColor ease-out 400ms forwards;
+}
+
+.hamburger-background {
+  position: absolute;
+  width: 5em;
+  height: 5em;
   top: 0;
-  right: 2%;
+  right: 0;
+  border-end-start-radius: 60px;
+  background-color: white;
+  z-index: -1;
+  transform: translate(70px, -70px);
+  transition: all 700ms;
+}
+
+.hamburger:hover .hamburger-lines {
+  animation: changeColor ease-in-out 400ms forwards;
+}
+
+.hamburger:hover > .hamburger-background {
+  transform: translate(15px, -5px);
+}
+
+.hamburger-open {
+  animation: openMenu ease-in-out 1s forwards;
+}
+
+@keyframes openMenu {
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes reversechangeColor {
+  from {
+    border-color: black;
+  }
+  to {
+    border-color: white;
+  }
+}
+
+@keyframes changeColor {
+  from {
+    border-color: white;
+  }
+  to {
+    border-color: black;
+  }
 }
 
 /* body */
@@ -30,6 +98,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  overflow: hidden;
   background-color: darkslategray;
 }
 

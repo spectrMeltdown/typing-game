@@ -1,18 +1,26 @@
 const QUOTELISTURL = "https://type.fit/api/quotes";
 let random = Math.floor(Math.random() * 1000);
-let gonext = 0;
-let incre = 0;
+let increment = 0;
+let typedchars = 0;
+let time = 0;
+let wpm = 0;
 
 quoteInput.addEventListener("input", (e) => {
   const quotearray = quoteDisplay.querySelectorAll("span");
   const inputarray = quoteInput.value.split("");
-  incre = quoteInput.value.length;
-  if (quotearray[incre] != undefined)
-    quotearray[incre].classList.add("highlight");
+  increment = quoteInput.value.length;
+  if (
+    e.inputType != "deleteContentBackward" ||
+    e.inputType != "insertLineBreak"
+  ) {
+    typedchars = 0;
+    console.log("error");
+  }
+  if (quotearray[increment] != undefined)
+    quotearray[increment].classList.add("highlight");
   quotearray.forEach((quotechar, index) => {
     const inputchar = inputarray[index];
     if (inputchar == null) {
-      //quotechar.classList.remove("highlight");
       quotechar.classList.remove("correct");
       quotechar.classList.remove("wrong");
     } else if (inputchar === quotechar.innerText) {
@@ -28,9 +36,6 @@ quoteInput.addEventListener("input", (e) => {
   if (quoteInput.value.length == quotearray.length) {
     window.location.reload();
   }
-  // if (gonext == 1 && e.inputType == "insertLineBreak") {
-  //   window.location.reload();
-  // }
 });
 
 async function getAllQuotes() {
@@ -67,16 +72,23 @@ async function renderQuote() {
 }
 
 function startTimer() {
-  timer.innerText = 0;
+  //timer.innerText = 0;
   let startTime = new Date();
   setInterval(() => {
-    timer.innerText = getTime(startTime);
+    //timer.innerText = getTime(startTime);
+    time++;
   }, 1000);
 }
 
 function getTime(time) {
   return Math.floor((new Date() - time) / 1000);
 }
+
+// function highlight() {
+//   if () {
+
+//   }
+// }
 
 renderQuote();
 
@@ -86,3 +98,8 @@ renderQuote();
 // } else {
 //   refillcookies();
 // }
+
+//Dropdown Menu
+function openMenu() {
+  document.querySelector("#hamburger");
+}
