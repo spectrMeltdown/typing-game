@@ -100,6 +100,10 @@ labelContainer.addEventListener("click", (e) => {
   let spans = document.querySelectorAll("span");
 });
 
+document.querySelector();
+let div = document.getElementById("div"),
+  deg = rotated ? 0 : 66;
+
 // Failed attempt to store data offline. Document.cookie uses string to store data. Not efficient for a json.
 // if (document.cookie != "") {
 //   quotelist = document.cookie;
