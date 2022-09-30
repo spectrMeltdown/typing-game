@@ -92,6 +92,14 @@ function getTime(time) {
 
 renderQuote();
 
+let labelInput = document.querySelector("label.quote-display");
+let labelContainer = document.querySelector("div.container");
+let spans = document.querySelectorAll("span");
+labelContainer.addEventListener("click", (e) => {
+  console.log(labelContainer);
+  let spans = document.querySelectorAll("span");
+});
+
 // Failed attempt to store data offline. Document.cookie uses string to store data. Not efficient for a json.
 // if (document.cookie != "") {
 //   quotelist = document.cookie;
@@ -99,7 +107,4 @@ renderQuote();
 //   refillcookies();
 // }
 
-//Dropdown Menu
-function openMenu() {
-  document.querySelector("#hamburger");
-}
+//------------ Other optimizations --------------
