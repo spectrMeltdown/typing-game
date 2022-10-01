@@ -1,1 +1,3 @@
-# Working Progress
+# Typeit
+
+Your average typing game.
