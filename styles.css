@@ -62,7 +62,7 @@ nav {
 }
 
 .title {
-  padding-left: 2%;
+  margin-left: 2%;
 }
 
 .hamburger {
@@ -76,6 +76,7 @@ nav {
   margin: 0.5em;
   /* cursor: pointer; */
   transition: closeMenu ease-out 400ms;
+  background-color: darkslategray;
 }
 
 .hamburger-lines {
@@ -191,7 +192,6 @@ body {
 
 .container {
   background-color: #243b35;
-  padding: 2rem;
   border-radius: 0.5rem;
   width: min(700px, 90%);
 }
@@ -216,6 +216,7 @@ body {
 .quote-display {
   font-size: 1.2rem;
   font-family: iosevka;
+  padding: 2rem;
 }
 
 .quote-input {
@@ -235,6 +236,10 @@ body {
   font-size: 1rem;
   border-radius: 0.5rem;
   color: white; */
+}
+
+textarea:focus + div {
+  box-shadow: 0 0 10px 1px black inset;
 }
 
 .correct {
@@ -260,10 +265,17 @@ body {
   user-select: none;
 }
 
+.emoji-error {
+  position: absolute;
+  top: 20%;
+  right: 2.8%;
+  z-index: -1;
+  font-size: 1.2rem;
+}
+
 .hover-underline-animation {
   display: inline-block;
   position: relative;
-  color: #0087ca;
 }
 
 .hover-underline-animation:after {
@@ -274,7 +286,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #0087ca;
+  background-color: white;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
